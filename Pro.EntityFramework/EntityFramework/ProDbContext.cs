@@ -1,4 +1,5 @@
 ﻿using System.Data.Common;
+using System.Data.Entity;
 using Abp.Zero.EntityFramework;
 using Pro.Authorization.Roles;
 using Pro.Authorization.Users;
@@ -42,6 +43,15 @@ namespace Pro.EntityFramework
          : base(existingConnection, contextOwnsConnection)
         {
 
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ChangeAbpTablePrefix<Tenant, Role, User>("Pro");
+            
+            //修改表前缀：
+            //nuget包管理器控制台  add-migration  添加迁移  然后在更新  update-database
         }
     }
 }
