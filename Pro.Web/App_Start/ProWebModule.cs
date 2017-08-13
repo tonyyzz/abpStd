@@ -13,6 +13,7 @@ using Pro.Api;
 using Castle.MicroKernel.Registration;
 using Hangfire;
 using Microsoft.Owin.Security;
+using Abp.Configuration.Startup;
 
 namespace Pro.Web
 {
@@ -38,6 +39,8 @@ namespace Pro.Web
             //{
             //    configuration.GlobalConfiguration.UseSqlServerStorage("Default");
             //});
+
+            Configuration.Modules.AbpWeb().AntiForgery.IsEnabled = false;
         }
 
         public override void Initialize()
