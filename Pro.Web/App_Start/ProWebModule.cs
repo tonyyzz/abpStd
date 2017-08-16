@@ -14,6 +14,7 @@ using Castle.MicroKernel.Registration;
 using Hangfire;
 using Microsoft.Owin.Security;
 using Abp.Configuration.Startup;
+using System.Diagnostics;
 
 namespace Pro.Web
 {
@@ -28,6 +29,8 @@ namespace Pro.Web
     {
         public override void PreInitialize()
         {
+            Debug.WriteLine("------------ ProWebModule PreInitialize");
+
             //Enable database based localization
             Configuration.Modules.Zero().LanguageManagement.EnableDbLocalization();
 
@@ -45,6 +48,7 @@ namespace Pro.Web
 
         public override void Initialize()
         {
+            Debug.WriteLine("------------ ProWebModule Initialize");
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
             IocManager.IocContainer.Register(
@@ -57,6 +61,16 @@ namespace Pro.Web
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        public override void PostInitialize()
+        {
+            Debug.WriteLine("------------ ProWebModule PostInitialize");
+        }
+
+        public override void Shutdown()
+        {
+            Debug.WriteLine("------------ ProWebModule Shutdown");
         }
     }
 }

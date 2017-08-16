@@ -7,14 +7,21 @@ using Abp.WebApi;
 using Swashbuckle.Application;
 using System.Linq;
 using System.Web.Http.Cors;
+using System.Diagnostics;
 
 namespace Pro.Api
 {
     [DependsOn(typeof(AbpWebApiModule), typeof(ProApplicationModule))]
     public class ProWebApiModule : AbpModule
     {
+        public override void PreInitialize()
+        {
+            Debug.WriteLine("------------ ProWebApiModule PreInitialize");
+        }
+
         public override void Initialize()
         {
+            Debug.WriteLine("------------ ProWebApiModule Initialize");
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
             Configuration.Modules.AbpWebApi().DynamicApiControllerBuilder
@@ -43,6 +50,16 @@ namespace Pro.Api
                 {
                     c.InjectJavaScript(Assembly.GetAssembly(typeof(AbpWebApiModule)), "AbpCompanyName.AbpProjectName.Api.Scripts.Swagger-Custom.js");
                 });
+        }
+
+        
+        public override void PostInitialize()
+        {
+            Debug.WriteLine("------------ ProWebApiModule PostInitialize");
+        }
+        public override void Shutdown()
+        {
+            Debug.WriteLine("------------ ProWebApiModule Shutdown");
         }
     }
 }

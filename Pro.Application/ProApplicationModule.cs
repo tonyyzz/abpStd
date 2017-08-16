@@ -9,6 +9,7 @@ using Pro.Authorization.Roles;
 using Pro.Authorization.Users;
 using Pro.Roles.Dto;
 using Pro.Users.Dto;
+using System.Diagnostics;
 
 namespace Pro
 {
@@ -17,10 +18,12 @@ namespace Pro
     {
         public override void PreInitialize()
         {
+            Debug.WriteLine("------------ ProApplicationModule PreInitialize");
         }
 
         public override void Initialize()
         {
+            Debug.WriteLine("------------ ProApplicationModule Initialize");
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
             // TODO: Is there somewhere else to store these, with the dto classes
@@ -39,6 +42,16 @@ namespace Pro
                 cfg.CreateMap<CreateUserDto, User>();
                 cfg.CreateMap<CreateUserDto, User>().ForMember(x => x.Roles, opt => opt.Ignore());
             });
+        }
+
+        public override void PostInitialize()
+        {
+            Debug.WriteLine("------------ ProApplicationModule PostInitialize");
+        }
+
+        public override void Shutdown()
+        {
+            Debug.WriteLine("------------ ProApplicationModule Shutdown");
         }
     }
 }
