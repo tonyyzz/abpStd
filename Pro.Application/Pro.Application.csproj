@@ -117,6 +117,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Persons\IPersonManager.cs" />
+    <Compile Include="Persons\MyPersonManager.cs" />
     <Compile Include="ProApplicationModule.cs" />
     <Compile Include="ProAppServiceBase.cs" />
     <Compile Include="Authorization\Accounts\AccountAppService.cs" />

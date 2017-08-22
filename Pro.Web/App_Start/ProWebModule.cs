@@ -15,6 +15,7 @@ using Hangfire;
 using Microsoft.Owin.Security;
 using Abp.Configuration.Startup;
 using System.Diagnostics;
+using Abp.Localization;
 
 namespace Pro.Web
 {

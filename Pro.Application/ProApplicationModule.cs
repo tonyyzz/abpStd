@@ -10,6 +10,8 @@ using Pro.Authorization.Users;
 using Pro.Roles.Dto;
 using Pro.Users.Dto;
 using System.Diagnostics;
+using Pro.Persons;
+using Abp.Dependency;
 
 namespace Pro
 {
@@ -25,6 +27,9 @@ namespace Pro
         {
             Debug.WriteLine("------------ ProApplicationModule Initialize");
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+
+            //Using IocManager
+            IocManager.Register<IPersonManager, MyPersonManager>(DependencyLifeStyle.Transient);
 
             // TODO: Is there somewhere else to store these, with the dto classes
             Configuration.Modules.AbpAutoMapper().Configurators.Add(cfg =>
