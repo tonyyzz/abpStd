@@ -2,11 +2,12 @@
 
 namespace Pro.Web.Controllers
 {
-    public class AboutController : ProControllerBase
-    {
-        public ActionResult Index()
-        {
-            return View();
-        }
+	public class AboutController : ProControllerBase
+	{
+		public ActionResult Index()
+		{
+			Logger.Debug("A sample log message...");
+			return View();
+		}
 	}
 }

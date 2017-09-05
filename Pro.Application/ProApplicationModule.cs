@@ -29,7 +29,7 @@ namespace Pro
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
             //Using IocManager
-            IocManager.Register<IPersonManager, MyPersonManager>(DependencyLifeStyle.Transient);
+            //IocManager.Register<IPersonManager, MyPersonManager>(DependencyLifeStyle.Transient);
 
             // TODO: Is there somewhere else to store these, with the dto classes
             Configuration.Modules.AbpAutoMapper().Configurators.Add(cfg =>
