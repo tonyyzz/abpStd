@@ -6,7 +6,11 @@ namespace Pro.Web.Controllers
 	{
 		public ActionResult Index()
 		{
-			Logger.Debug("A sample log message...");
+			Logger.Info("------A Info message...");
+			Logger.Warn("------A Warn message...");
+			Logger.Fatal("------A Fatal message...");
+			Logger.Error("------A Error message...");
+			Logger.Debug("------A Debug message...");
 			return View();
 		}
 	}

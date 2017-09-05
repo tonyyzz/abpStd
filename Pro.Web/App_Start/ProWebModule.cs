@@ -64,8 +64,8 @@ namespace Pro.Web
 				cache.DefaultSlidingExpireTime = TimeSpan.FromHours(8);
 			});
 
-			//cache  redis
-			Configuration.Caching.UseRedis();
+			//cache  redis  要安装redis服务
+			//Configuration.Caching.UseRedis();
 
 		}
 
