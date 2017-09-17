@@ -18,6 +18,7 @@ using System.Diagnostics;
 using Abp.Localization;
 using System;
 using Abp.Runtime.Caching.Redis;
+using Abp.Timing;
 
 namespace Pro.Web
 {
@@ -66,6 +67,10 @@ namespace Pro.Web
 
 			//cache  redis  要安装redis服务
 			//Configuration.Caching.UseRedis();
+
+
+
+			
 
 		}
 
