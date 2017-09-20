@@ -8,7 +8,7 @@ namespace Pro.Tests
         {
             if (!ProConsts.MultiTenancyEnabled)
             {
-                Skip = "MultiTenancy is disabled.";
+                Skip = "MultiTenancy is disabled."; 
             }
         }
     }
