@@ -1,4 +1,5 @@
-﻿using Abp.AutoMapper;
+﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
 using Pro.Authorization.Users;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace Pro.Persons.Dto
 {
 	//[AutoMapTo(typeof(User))]
-	public class PersonDto
+	public class PersonDto : EntityDto<string>
 	{
 		public string Name { get; set; }
 
@@ -18,5 +19,10 @@ namespace Pro.Persons.Dto
 		public string Email { get; set; }
 
 		public string Password { get; set; }
+
+		public PersonDto()
+		{
+
+		}
 	}
 }

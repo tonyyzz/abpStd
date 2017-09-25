@@ -2,6 +2,8 @@
 using Abp.Web.Mvc.Authorization;
 using Abp.Timing;
 using System;
+using Abp.Net.Mail;
+using Pro.Persons.Dto;
 
 namespace Pro.Web.Controllers
 {
@@ -15,6 +17,13 @@ namespace Pro.Web.Controllers
 			var datetimeKind = Clock.Kind;
 			var flag = Clock.SupportsMultipleTimezone;
 			var time = Clock.Normalize(datetime);
+
+
+			//IEmailSender emailSender
+			//DefaultMailKitSmtpBuilder
+			//DefaultFromAddress
+
+			PersonDto personDto = new PersonDto();
 
 
 
