@@ -11,18 +11,18 @@ using System.Threading.Tasks;
 namespace Pro.Persons.Dto
 {
 	//[AutoMapTo(typeof(User))]
-	public class PersonDto : EntityDto<long>, IHasCreationTime
+	public class PersonDto : EntityDto<long>, IFullAudited
 	{
-
-
 		public string Name { get; set; }
-
 		public string Surname { get; set; }
-
 		public string Email { get; set; }
-
 		public string Password { get; set; }
-		public DateTime CreationTime { get => DateTime.Now; set => CreationTime = value; }
-
+		public long? CreatorUserId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		public DateTime CreationTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		public long? LastModifierUserId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		public DateTime? LastModificationTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		public long? DeleterUserId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		public DateTime? DeletionTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		public bool IsDeleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 	}
 }
