@@ -1,0 +1,42 @@
+﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
+<<<<<<< HEAD
+using Abp.Domain.Entities.Auditing;
+=======
+>>>>>>> origin/master
+using Pro.Authorization.Users;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Pro.Persons.Dto
+{
+	//[AutoMapTo(typeof(User))]
+<<<<<<< HEAD
+	public class PersonDto : EntityDto<long>, IHasCreationTime
+=======
+	public class PersonDto : EntityDto<string>
+>>>>>>> origin/master
+	{
+
+
+		public string Name { get; set; }
+
+		public string Surname { get; set; }
+
+		public string Email { get; set; }
+
+		public string Password { get; set; }
+<<<<<<< HEAD
+		public DateTime CreationTime { get => DateTime.Now; set => CreationTime = value; }
+=======
+
+		public PersonDto()
+		{
+
+		}
+>>>>>>> origin/master
+	}
+}
