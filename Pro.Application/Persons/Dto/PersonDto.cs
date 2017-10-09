@@ -23,5 +23,6 @@ namespace Pro.Persons.Dto
 
 		public string Password { get; set; }
 		public DateTime CreationTime { get => DateTime.Now; set => CreationTime = value; }
+
 	}
 }
