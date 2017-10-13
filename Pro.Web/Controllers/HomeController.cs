@@ -4,6 +4,7 @@ using Abp.Timing;
 using System;
 using Abp.Net.Mail;
 using Pro.Persons.Dto;
+using Abp;
 
 namespace Pro.Web.Controllers
 {
@@ -24,7 +25,8 @@ namespace Pro.Web.Controllers
 			//DefaultFromAddress
 
 			PersonDto personDto = new PersonDto();
-
+			//RandomHelper
+			//personDto.set
 
 
 			return View();

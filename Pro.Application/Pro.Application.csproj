@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MyAppModule.cs" />
+    <Compile Include="Persons\Dto\Address.cs" />
     <Compile Include="Persons\Dto\PersonDto.cs" />
     <Compile Include="Persons\IPersonManager.cs" />
     <Compile Include="Persons\MyPersonManager.cs" />
